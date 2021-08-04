@@ -1,9 +1,11 @@
 import React from 'react';
+import Logo from "../../assets/logo.png";
+import {Container, Image} from './styles';
 
 export default function Home(){
   return(
-    <div>
-      <h1>Header</h1>
-    </div>
+    <Container>
+      <Image src={Logo} />
+    </Container>
   )
 }
