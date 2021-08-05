@@ -50,31 +50,13 @@ export const SubmitButton = styled.button`
 
 export const ContainerApi = styled.div`
   position: absolute;
-  margin-top: 30rem;
-  margin-left: 1%;
-  width: 98%; 
+  width: 96.5%; 
+  margin-top: 45rem;
+  margin-left: 32px;
+
   border: 1px solid lightgray;
-`;
-
-export const ContainerApiInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  
-`;
-
-export const ArticleApi = styled.article`
-  align-items: center;
-  background-color: #FFFFFF;
-  width: 1000px;
-  height: 35px;
-  
-`;
-
-export const EmployeeDetails = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 1px solid lightgray;  
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 `;
 
 export const ContainerDescriptions = styled.div`
@@ -86,24 +68,52 @@ export const ContainerDescriptions = styled.div`
   width: 100%;
   height: 49px;
   background-color: #5984C0;
-  
-  font-size: 16px;
-  color: #FFFFFF;
 
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 `; 
 
 export const TitleDescriptions = styled.p`
+  font-size: 16px;
+  color: #FFFFFF;
+`;
 
+export const ContainerApiInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ArticleApi = styled.article`
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 55px;
+`;
+
+export const EmployeeDetails = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 55px;
+  border: 1px solid lightgray;  
 `;
 
 export const ImageApi = styled.img`
   width: 39px;
   height: 33px;
-  
 `;
 
-export const TextApi = styled.p`
+export const TextName = styled.p`
+  text-align: left;
+`;
 
+export const TextJob = styled.p`
+  text-align: left;
+`;
+
+export const  TextAdmission = styled.p`
+  text-align: left;
+`;
+
+export const  TextPhone = styled.p`
+  text-align: left;
 `;

@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Header from '../../components/Header';
 import { AiOutlineSearch } from 'react-icons/ai';
 import api from '../../services/api';
-import {Container, ContainerSearch, Title, Form, Input, SubmitButton, ContainerApi, ContainerApiInfo, ArticleApi, EmployeeDetails, ContainerDescriptions, TitleDescriptions, ImageApi, TextApi} from './styles';
+import {Container, ContainerSearch, Title, Form, Input, SubmitButton, ContainerApi, ContainerApiInfo, ArticleApi, EmployeeDetails, ContainerDescriptions, TitleDescriptions, ImageApi, TextName, TextJob, TextAdmission, TextPhone} from './styles';
 
 export default function Home(){
   const [employess, setEmployess] = useState([]);
+  const [input, setInput] = useState('');
 
   useEffect(() => {
     async function loadEmployess(){
@@ -17,7 +18,6 @@ export default function Home(){
     loadEmployess();
   },[]);
 
-
   return(
     <Container>
       <Header />
@@ -25,31 +25,32 @@ export default function Home(){
       <ContainerSearch>
         <Title>Funcionários</Title>
         
-        <Form onSubmit={() => {}}>
-          <Input placeholder="Pesquisar" maxLength="26"/>
-          <SubmitButton>
+        <Form>
+          <Input type="text" placeholder="Pesquisar" maxLength="25" value={input} onChange={(event) => setInput(event.target.value)}/>
+          <SubmitButton onClick={() => {}}>
             <AiOutlineSearch color="#000" size={24}/>
           </SubmitButton>
         </Form>
       
         <ContainerApi>
-        <ContainerDescriptions>
-          <TitleDescriptions>Foto</TitleDescriptions>
-          <TitleDescriptions>Nome</TitleDescriptions>
-          <TitleDescriptions>Cargo</TitleDescriptions>
-          <TitleDescriptions>Data de Admissao</TitleDescriptions>
-          <TitleDescriptions>Telefone</TitleDescriptions>
-        </ContainerDescriptions>
+          <ContainerDescriptions>
+            <TitleDescriptions>Foto</TitleDescriptions>
+            <TitleDescriptions>Nome</TitleDescriptions>
+            <TitleDescriptions>Cargo</TitleDescriptions>
+            <TitleDescriptions>Data de Admissao</TitleDescriptions>
+            <TitleDescriptions>Telefone</TitleDescriptions>
+          </ContainerDescriptions>
+
           <ContainerApiInfo>
             {employess.map((item) => {
               return (
                 <ArticleApi key={item.id}>
                   <EmployeeDetails>
                     <ImageApi>{item.photo}</ImageApi>
-                    <TextApi>{item.name}</TextApi>
-                    <TextApi>{item.job}</TextApi>
-                    <TextApi>{item.admission_date}</TextApi>
-                    <TextApi>{item.phone}</TextApi>
+                    <TextName>{item.name}</TextName>
+                    <TextJob>{item.job}</TextJob>
+                    <TextAdmission>{item.admission_date}</TextAdmission>
+                    <TextPhone>{item.phone}</TextPhone>
                   </EmployeeDetails>
                 </ArticleApi>
               )
