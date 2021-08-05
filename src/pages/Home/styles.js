@@ -53,7 +53,6 @@ export const ContainerApi = styled.div`
   width: 96.5%; 
   margin-top: 45rem;
   margin-left: 32px;
-
   border: 1px solid lightgray;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -62,25 +61,25 @@ export const ContainerApi = styled.div`
 export const ContainerDescriptions = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-
   width: 100%;
   height: 49px;
   background-color: #5984C0;
-
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 `; 
 
 export const TitleDescriptions = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   color: #FFFFFF;
+  margin-left: -20px;
 `;
 
 export const ContainerApiInfo = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: left;
 `;
 
 export const ArticleApi = styled.article`
@@ -91,10 +90,11 @@ export const ArticleApi = styled.article`
 
 export const EmployeeDetails = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   height: 55px;
   border: 1px solid lightgray;  
+
 `;
 
 export const ImageApi = styled.img`
@@ -102,18 +102,6 @@ export const ImageApi = styled.img`
   height: 33px;
 `;
 
-export const TextName = styled.p`
-  text-align: left;
-`;
-
-export const TextJob = styled.p`
-  text-align: left;
-`;
-
-export const  TextAdmission = styled.p`
-  text-align: left;
-`;
-
-export const  TextPhone = styled.p`
-  text-align: left;
+export const TextApi = styled.p`
+  text-align: center;
 `;

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from '../../components/Header';
 import { AiOutlineSearch } from 'react-icons/ai';
 import api from '../../services/api';
-import {Container, ContainerSearch, Title, Form, Input, SubmitButton, ContainerApi, ContainerApiInfo, ArticleApi, EmployeeDetails, ContainerDescriptions, TitleDescriptions, ImageApi, TextName, TextJob, TextAdmission, TextPhone} from './styles';
+import {Container, ContainerSearch, Title, Form, Input, SubmitButton, ContainerApi, ContainerApiInfo, ArticleApi, EmployeeDetails, ContainerDescriptions, TitleDescriptions, ImageApi, TextApi} from './styles';
 
 export default function Home(){
   const [employess, setEmployess] = useState([]);
@@ -17,6 +17,10 @@ export default function Home(){
 
     loadEmployess();
   },[]);
+
+  const filterEmployess = employess.filter( employee => {
+    return employee.name.toLowerCase().includes(input.toLowerCase());
+  });
 
   return(
     <Container>
@@ -42,15 +46,15 @@ export default function Home(){
           </ContainerDescriptions>
 
           <ContainerApiInfo>
-            {employess.map((item) => {
+            {filterEmployess.map((item) => {
               return (
                 <ArticleApi key={item.id}>
                   <EmployeeDetails>
                     <ImageApi>{item.photo}</ImageApi>
-                    <TextName>{item.name}</TextName>
-                    <TextJob>{item.job}</TextJob>
-                    <TextAdmission>{item.admission_date}</TextAdmission>
-                    <TextPhone>{item.phone}</TextPhone>
+                    <TextApi>{item.name}</TextApi>
+                    <TextApi>{item.job}</TextApi>
+                    <TextApi>{item.admission_date}</TextApi>
+                    <TextApi>{item.phone}</TextApi>
                   </EmployeeDetails>
                 </ArticleApi>
               )
