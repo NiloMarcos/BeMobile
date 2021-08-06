@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from '../../components/Header';
 import { AiOutlineSearch } from 'react-icons/ai';
 import api from '../../services/api';
-import {Container, ContainerSearch, Title, Form, Input, SubmitButton, ContainerApi, ContainerApiInfo, ArticleApi, EmployeeDetails, ContainerDescriptions, TitleDescriptions, ImageApi, TextApi} from './styles';
+import {Container, ContainerSearch, Title, Form, Input, SubmitButton, ContainerApi, ContainerApiInfo, ArticleApi, EmployeeDetails, ContainerDescriptions, TitleDescriptions, ImageApi, TextApi,TextName} from './styles';
 
 export default function Home(){
   const [employess, setEmployess] = useState([]);
@@ -21,6 +21,20 @@ export default function Home(){
   const filterEmployess = employess.filter( employee => {
     return employee.name.toLowerCase().includes(input.toLowerCase());
   });
+
+  function formatDate(dateInput) {
+    var dateObj = new Date(dateInput);
+    var dateString = [
+      dateObj.getDate(),
+      dateObj.getMonth(),
+      dateObj.getFullYear()
+    ].join('/');
+  
+    return dateString;
+  }
+  
+  console.log(formatDate('2019-12-02T00:00:00.000'));
+  console.log(employess.admission_date)
 
   return(
     <Container>
@@ -50,10 +64,11 @@ export default function Home(){
               return (
                 <ArticleApi key={item.id}>
                   <EmployeeDetails>
-                    <ImageApi>{item.photo}</ImageApi>
-                    <TextApi>{item.name}</TextApi>
+                    <ImageApi src={item.image}/>
+                    <TextName>{item.name}</TextName>
                     <TextApi>{item.job}</TextApi>
-                    <TextApi>{item.admission_date}</TextApi>
+                    {/* <TextApi>{item.admission_date}</TextApi> */}
+                    <TextApi>{formatDate(item.admission_date)}</TextApi>
                     <TextApi>{item.phone}</TextApi>
                   </EmployeeDetails>
                 </ArticleApi>

@@ -73,7 +73,7 @@ export const ContainerDescriptions = styled.div`
 export const TitleDescriptions = styled.p`
   font-size: 18px;
   color: #FFFFFF;
-  margin-left: -20px;
+  margin-left: 5px;
 `;
 
 export const ContainerApiInfo = styled.div`
@@ -82,10 +82,9 @@ export const ContainerApiInfo = styled.div`
   text-align: left;
 `;
 
-export const ArticleApi = styled.article`
+export const ArticleApi = styled.div`
   background-color: #FFFFFF;
   width: 100%;
-  height: 55px;
 `;
 
 export const EmployeeDetails = styled.div`
@@ -93,15 +92,22 @@ export const EmployeeDetails = styled.div`
   justify-content: space-around;
   align-items: center;
   height: 55px;
-  border: 1px solid lightgray;  
-
+  border-bottom: 1px solid lightgray;
 `;
 
 export const ImageApi = styled.img`
+  float: left;
   width: 39px;
   height: 33px;
 `;
 
+export const TextName = styled.p`
+  width: 50px;
+`;
+
 export const TextApi = styled.p`
-  text-align: center;
+  width: 80px;
+  /* height: 33px; */
+  float: left;
+  /* text-align: center; */
 `;
